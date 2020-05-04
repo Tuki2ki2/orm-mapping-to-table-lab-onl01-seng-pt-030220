@@ -40,8 +40,8 @@ DB[:conn].execute(sql, self.name, self.grade)
 @id = DB[:conn].execute("SELECT LAST_INSERT_ROWID() FROM students")[0][0]
 end
 
-def create(name, grade)
-  student = Student.new(name, grade)
+def create(:name, :grade)
+  student = Student.new(:name, :grade)
   student.save
   student
 end
